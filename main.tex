@@ -1,0 +1,145 @@
+%% For double-blind review submission, w/o CCS and ACM Reference (max submission space)
+%\documentclass[sigplan,10pt]{acmart}\settopmatter{printfolios=true,printccs=false,printacmref=false}
+%% For double-blind review submission, w/ CCS and ACM Reference
+%\documentclass[acmsmall,review,anonymous]{acmart}\settopmatter{printfolios=true}
+%% For single-blind review submission, w/o CCS and ACM Reference (max submission space)
+%\documentclass[acmsmall,review]{acmart}\settopmatter{printfolios=true,printccs=false,printacmref=false}
+%% For single-blind review submission, w/ CCS and ACM Reference
+%\documentclass[acmsmall,review]{acmart}\settopmatter{printfolios=true}
+%% For final camera-ready submission, w/ required CCS and ACM Reference
+\documentclass[sigplan,screen]{acmart}\settopmatter{}
+
+
+%%% The following is specific to Onward! '20-ESSAYS and the paper
+%%% 'Putting the Semantics into Semantic Versioning'
+%%% by Patrick Lam, Jens Dietrich, and David J. Pearce.
+%%%
+%\setcopyright{acmlicensed}
+%\acmPrice{15.00}
+%\acmDOI{10.1145/3426428.3426922}
+%\acmYear{2020}
+%\copyrightyear{2020}
+%\acmSubmissionID{onward20essays-id3-p}
+%\acmISBN{978-1-4503-8178-9/20/11}
+\settopmatter{printacmref=false}
+\setcopyright{none}
+\acmConference{Workshop on Compiler-Driven Performance}{November 15, 2022}{Toronto, CA}
+%\acmBooktitle{Proceedings of the 2020 ACM SIGPLAN International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software (Onward! '20), November 18--20, 2020, Virtual, USA}
+
+%% Copyright information
+%% Supplied to authors (based on authors' rights management selection;
+%% see authors.acm.org) by publisher for camera-ready submission;
+%% use 'none' for review submission.
+%\setcopyright{none}
+%\setcopyright{acmcopyright}
+%\setcopyright{acmlicensed}
+%\setcopyright{rightsretained}
+%\copyrightyear{2018}           %% If different from \acmYear
+
+%% Bibliography style
+\bibliographystyle{ACM-Reference-Format}
+%% Citation style
+%% Note: author/year citations are required for papers published as an
+%% issue of PACMPL.
+\citestyle{acmauthoryear}   %% For author/year citations
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Note: Authors migrating a paper from PACMPL format to traditional
+%% SIGPLAN proceedings format must update the '\documentclass' and
+%% topmatter commands above; see 'acmart-sigplanproc-template.tex'.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% Some recommended packages.
+\usepackage{booktabs}   %% For formal tables:
+%% http://ctan.org/pkg/booktabs
+\usepackage{subcaption} %% For complex figures with subfigures/subcaptions
+%% http://ctan.org/pkg/subcaption
+\usepackage{todonotes}
+\usepackage{epigraph}
+\usepackage{dirtree}
+\usepackage[normalem]{ulem}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{flushend}
+
+%https://tex.stackexchange.com/questions/3781/natbib-merging-authors-with-the-same-names/6636#6636
+\newcommand*{\nameadjunct}{\relax}
+\newcommand*{\citeposs}[2][]{%
+  \begingroup
+  \renewcommand*{\nameadjunct}{'s}%
+  \citet[#1]{#2}%
+  \endgroup
+}
+\newcommand*{\citesep}[3][]{%
+  \begingroup
+  \renewcommand*{\nameadjunct}{#3}%
+  \citet[#1]{#2}%
+  \endgroup
+}
+
+  
+\begin{document}
+	
+	%% Title information
+	\title{What Tests Can Tell Us About Program Safety}         %% [Short Title] is optional;
+	%% when present, will be used in
+	%% header instead of Full Title.
+	% \titlenote{with title note}             %% \titlenote is optional;
+	%% can be repeated if necessary;
+	%% contents suppressed with 'anonymous'
+	% \subtitle{Subtitle}                     %% \subtitle is optional
+	% \subtitlenote{with subtitle note}       %% \subtitlenote is optional;
+	%% can be repeated if necessary;
+	%% contents suppressed with 'anonymous'
+	
+	
+	%% Author information
+	%% Contents and number of authors suppressed with 'anonymous'.
+	%% Each author should be introduced by \author, followed by
+	%% \authornote (optional), \orcid (optional), \affiliation, and
+	%% \email.
+	%% An author may have multiple affiliations and/or emails; repeat the
+	%% appropriate command.
+	%% Many elements are not rendered, but should be provided for metadata
+	%% extraction tools.
+	
+	%% Author with single affiliation.
+	\author{Patrick Lam}
+	%\authornote{with author1 note}          %% \authornote is optional;
+	%% can be repeated if necessary
+	%\orcid{nnnn-nnnn-nnnn-nnnn}             %% \orcid is optional
+	\affiliation{
+		%\position{Position1}
+		%\department{Department1}              %% \department is recommended
+		\institution{University of Waterloo}            %% \institution is required
+		%\streetaddress{Street1 Address1}
+		\city{Waterloo}
+		\country{Canada}                    %% \country is recommended
+	}
+	\email{patrick.lam@uwaterloo.ca}          %% \email is recommended
+	
+	%% Abstract
+	%% Note: \begin{abstract}...\end{abstract} environment must come
+	%% before \maketitle command
+	\begin{abstract}
+          \input{abstract}
+	\end{abstract}
+	
+	%% \maketitle
+	%% Note: \maketitle command must come after title commands, author
+	%% commands, abstract environment, Computing Classification System
+	%% environment and commands, and keywords command.
+	\maketitle
+	
+\paragraph{Biography} Patrick Lam is an Associate Professor of Electrical and Computer Engineering at the University of Waterloo. His research interests focus on ways to use static and dynamic analysis techniques to help developers write better code. He is particularly interested in test code as well as program transformation.
+
+	
+	%% Appendix
+	%\appendix
+	%\section{Appendix}
+	
+	%Text of appendix \ldots
+	
+\end{document}
